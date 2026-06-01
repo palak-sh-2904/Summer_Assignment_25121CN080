@@ -1,16 +1,25 @@
-#include<stdio.h>
-int main(){
-    int n,f1=0,f2=1,f3,i;
-    printf("Enter the number:");
-    scanf("%d",&n);
-    printf("The fibonacci series is  ");
-    printf("%d\n",f1);
-    printf("%d\n",f2);
-    for( i=1;i<=n-2;i++){
-        f3=f1+f2;
-        printf("%d\n",f3);
-        f1=f2;
-        f2=f3;
+#include <stdio.h>
+int main() {
+int n, i, flag = 1;
+printf("Enter a number: ");
+scanf("%d", &n);
+ if (n <= 1){
+        flag = 0;
+ }
+ else {
+ for (i = 2; i <= n / 2; i++) {
+     if (n % i == 0) {
+        flag = 0;
+        break;
+            }
+        }
     }
+
+ if (flag){
+        printf("%d is a Prime Number.", n);
+    }
+       else{
+        printf("%d is not a Prime Number.", n);
+       }
     return 0;
 }

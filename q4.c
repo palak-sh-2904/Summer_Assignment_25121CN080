@@ -1,26 +1,14 @@
 #include <stdio.h>
-#include <math.h>
 int main() {
-    int start, end,temp,rem;
-    printf("Enter start and end of range: ");
-    scanf("%d %d", &start, &end);
-    printf("Armstrong numbers are:\n");
-    for(int num = start; num <= end; num++) {
-     temp = num;
-     int digits=0,sum=0;
-        while(temp != 0) {
-            digits++;
-            temp /= 10;
-        }
-        temp = num;
-        while(temp != 0) {
-            rem = temp % 10;
-            sum += pow(rem, digits);
-            temp /= 10;
-        }
-        if(sum == num)
-            printf("%d ", num);
+  int a, b, i, gcd,lcm;
+  printf("Enter two numbers: ");
+ scanf("%d%d", &a, &b);
+  for (i = 1; i <= a && i <= b; i++) {
+     if (a % i == 0 && b % i == 0){
+            gcd = i;
+     }
     }
+    lcm=(a*b)/gcd;
+    printf("LCM of two numbers a amd b is :%d",lcm);
     return 0;
 }
-

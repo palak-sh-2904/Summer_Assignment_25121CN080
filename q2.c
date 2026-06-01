@@ -1,23 +1,29 @@
-#include<stdio.h>
-int main(){
-    int n,f1=0,f2=1,f3,i;
-    printf("Enter the n:");
-    scanf("%d",&n);
-    if(n==1){
-        printf("%d",f1);
-    }
-   else  if(n==2){
-        printf("%d",f2);
-    }
-    
-    else{
-    for( i=3;i<=n;i++){
-        f3=f1+f2;
-        f1=f2;
-        f2=f3;
-    }
-    printf("%d",f3);
-}
+#include <stdio.h>
 
+int main() {
+    int first, last, i, j, prime;
+    printf("Enter firstnumber: ");
+    scanf("%d", &first);
+    printf("Enter last number: ");
+    scanf("%d", &last);
+    printf("Prime numbers between %d and %d are:\n", first, last);
+
+    for (i = first; i <= last; i++) {
+    if(i<=2){
+      continue;
+    prime = 1;
+    }   
+     for (j = 2; j <= i / 2; j++){ 
+      if (i % j == 0) {
+                prime = 0;
+                break;
+            }
+        }
+
+    }
+     if (prime==1){
+     printf("%d ", i);
+    }
     return 0;
+
 }
